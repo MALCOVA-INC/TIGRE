@@ -6,21 +6,26 @@ import scipy.ndimage.interpolation
 
 
 def load_head_phantom(number_of_voxels=None):
-    if number_of_voxels is None:
-        number_of_voxels = np.array((128, 128, 128))
-    list_relative_path = [
-        "../../../Common/data/head.mat",  # Local
-        "../../data/head.mat",   # setup.py
-        "../../../../data/head.mat"  # pip
-    ]
-    found = False
-    for relative_path in list_relative_path:
-        abs_path = os.path.join(os.path.dirname(__file__), relative_path)
-        if os.path.isfile(abs_path):
-            found = True
-            break
-    if found:
-        test_data = scipy.io.loadmat(abs_path)
+    # if number_of_voxels is None:
+    #     number_of_voxels = np.array((128, 128, 128))
+    # list_relative_path = [
+    #     "../../Common/data/head.mat",  # Erik's
+    #     "../../../Common/data/head.mat",  # Local
+    #     "../../data/head.mat",   # setup.py
+    #     "../../../../data/head.mat"  # pip
+    # ]
+    # found = False
+    # for relative_path in list_relative_path:
+    #     abs_path = os.path.join(demo_dir, relative_path)
+    #     print(f"Trying to load {abs_path}")
+    #     if os.path.isfile(abs_path):
+    #         found = True
+    #         break
+
+    # if not found:
+    #     raise FileNotFoundError("Could not find 'head.mat' in any of the specified paths.")
+    abs_path = "/home/malcova/Projects/TIGRE/Common/data/head.mat"  # Erik
+    test_data = scipy.io.loadmat(abs_path)
 
     # Loads data in F_CONTIGUOUS MODE (column major), convert to Row major
     image = test_data["img"].transpose(2, 1, 0).copy()
