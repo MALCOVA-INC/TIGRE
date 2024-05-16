@@ -1,4 +1,4 @@
-##% Demo 6: Algorithms01
+# % Demo 6: Algorithms01
 #
 # In this demo the usage of the FDK is explained
 #
@@ -18,17 +18,17 @@
 # Codes:              https://github.com/CERN/TIGRE/
 # Coded by:           Ander Biguri
 # --------------------------------------------------------------------------
-#%%Initialize
+# %%Initialize
 import tigre
 import numpy as np
 from tigre.utilities import sample_loader
 from tigre.utilities import CTnoise
 import tigre.algorithms as algs
 
-#%% Geometry
+# %% Geometry
 geo = tigre.geometry_default(high_resolution=False)
 
-#%% Load data and generate projections
+# %% Load data and generate projections
 # define angles
 angles = np.linspace(0, 2 * np.pi, 100)
 # Load thorax phatom data

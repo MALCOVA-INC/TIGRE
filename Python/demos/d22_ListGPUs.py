@@ -8,8 +8,9 @@ print("\tNames      : {}".format(listDeviceNames))
 print("===================")
 
 # Choose one of them
+targetGpuName = 'NVIDIA RTX 4000 Ada Generation Laptop GPU'
 # targetGpuName=''  # noqa: N816
-targetGpuName = "GeForce GTX 1060 6GB"  # noqa: N816
+# targetGpuName = "GeForce GTX 1060 6GB"  # noqa: N816
 # targetGpuName = 'GeForce RTX 2080 Ti'  # noqa: N816
 # targetGpuName = 'GeForce GTX 1070'  # noqa: N816
 
@@ -45,5 +46,5 @@ gpuids = gpu.GpuIds()
 gpuids.devices = list(range(0, 10))
 print(gpuids)
 
-gpuids2080 = gpu.GpuIds("GeForce RTX 2080 Ti")
-print(gpuids2080)
+# gpuids2080 = gpu.GpuIds("GeForce RTX 2080 Ti")
+# print(gpuids2080)
